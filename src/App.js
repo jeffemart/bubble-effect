@@ -2,24 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let amount = 100;
+  let body = document.querySelector('body');
+  let i = 0;
+  while (i < amount) {
+    let element = document.createElement('i');
+    let posX = Math.floor(Math.random() * window.innerWidth);
+    let delay = Math.random() * -20;
+    let duration = Math.random() * 10;
+
+    let size = Math.random() * 250;
+    element.style.width = 10 + size + 'px';
+    element.style.height = 0 + size + 'px';
+    element.style.left = posX + 'px';
+    element.style.animationDelay = delay + 's';
+    element.style.animationDuration = 5 + duration + 's';
+    element.style.webkitBoxShadow = "0 30px 50px #0002"
+
+    body.appendChild(element);
+    i++
+  }
 }
 
 export default App;
